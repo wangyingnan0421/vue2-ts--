@@ -3,10 +3,7 @@
 </template>
 
 <style lang="scss">
-div{
-  background: pink;
-  p{
-    color: red;
-  }
+body{
+  background: rgb(238, 238, 238);
 }
 </style>

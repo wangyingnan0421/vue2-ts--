@@ -5,8 +5,10 @@ import store from './store'
 //vant
 import Vant from 'vant';
 import 'vant/lib/index.css';
-
 Vue.use(Vant);
+//axios
+import axios from 'axios';
+Vue.prototype.$axios = axios;
 
 
 Vue.config.productionTip = false
