@@ -16,8 +16,29 @@ const routes: Array<RouteConfig> = [
     component: Home,
     children:[
       {
-        path:''
-      }
+        path:'',
+        component:()=> import ('@/pages/home/main/main.vue'),
+      },
+      {
+        path:'sort',
+        component:()=> import ('@/pages/home/sort/sort.vue'),
+      },
+      {
+        path:'main',
+        component:()=> import ('@/pages/home/main/main.vue'),
+      },
+      {
+        path:'mine',
+        component:()=> import ('@/pages/home/mine.vue'),
+      },
+      {
+        path:'car',
+        component:()=> import ('@/pages/home/car.vue'),
+      },
+      {
+        path:'list',
+        component:()=> import ('@/pages/home/list.vue'),
+      },
     ]
     
   },
@@ -38,5 +59,16 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+router.beforeEach((to,from,next)=>{
+  if(to.path === '/login' || to.path === '/register'){
+    next();
+  }else if(localStorage.getItem('token')){
+     next();
+  }else{
+    next('/login');
+  }
+})
+
+
 
 export default router

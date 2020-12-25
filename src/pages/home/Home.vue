@@ -2,11 +2,11 @@
   <div>
        <router-view></router-view>
        <footer>
-          <van-tabbar v-model="active">
-          <van-tabbar-item icon="home-o">标签</van-tabbar-item>
-          <van-tabbar-item icon="search">标签</van-tabbar-item>
-          <van-tabbar-item icon="friends-o">标签</van-tabbar-item>
-          <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
+          <van-tabbar v-model="active" router>
+          <van-tabbar-item to="/home/main" icon="home-o">首页</van-tabbar-item>
+          <van-tabbar-item to="/home/sort" icon="search">分裂</van-tabbar-item>
+          <van-tabbar-item to="/home/car" icon="friends-o">购物车</van-tabbar-item>
+          <van-tabbar-item to="/home/mine" icon="setting-o">我的</van-tabbar-item>
         </van-tabbar>
        </footer>
   </div>
@@ -21,10 +21,19 @@ import { Component, Vue } from "vue-property-decorator";
 })
 export default class Home extends Vue{
    active:number = 0;
+   mounted(){
+
+   }
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+footer{
+  display: fixed;
+  bottom: 0px;
+  z-index: 12;
+
+}
 
 
 </style>

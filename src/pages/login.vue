@@ -30,8 +30,8 @@ export default class Login extends Vue {
           message: "登录成功",
         });
         this.$store.dispatch('ac_login',data.list)
-        this.$router.push("/home");
         localStorage.setItem('token',data.list.token);
+        this.$router.push("/home");
       }
     });
   }

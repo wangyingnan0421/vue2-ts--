@@ -9,7 +9,8 @@ Vue.use(Vant);
 //axios
 import axios from 'axios';
 Vue.prototype.$axios = axios;
-
+//baseUrl
+Vue.prototype.$baseUrl = '/api'
 
 Vue.config.productionTip = false
 
